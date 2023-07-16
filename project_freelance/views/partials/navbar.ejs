@@ -1,0 +1,23 @@
+<nav class="navbar border-bottom navbar-expand-lg py-4 background3 bg-body-tertiary" >
+    <div class="container">
+
+      <img src="<%=detail.brandIconUrl%>" alt="#" width="30" height="24">
+      <a class="navbar-brand navbar1" href="#"><%=detail.brandName%></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <% for(let a=0;a<detail.links.length;a++) { %>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<%=detail.links[a].url%>" id="navbar1" ><%=detail.links[a].label%></a>
+          </li>
+
+          <%}%>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 

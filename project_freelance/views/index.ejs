@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+    <script src="https://kit.fontawesome.com/c78ecee5d1.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <%-include ('partials/navbar',{detail:detail})%>
+  
+    
+    <%-include ('partials/slider') %>
+    
+                           <!--&&&&&&&&&&&&&&&&&&& bannner1 section &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+                           <section class="banner1_section py-5">
+                            <div class="container text-center">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h1><%=banner.onehead%></h1>
+                                  <p><%=banner.onedes%></p>
+                                  <button class="btn  text-muted " id="btn-banner1"> <a href="<%=banner.onelink%>">Start Learning</a></button>
+                                </div>
+                              </div>
+                            </div>
+                           </section>
+   
+      <!-- ################################SERVICES SECTION#########################################################################  -->
+      
+     
+      <section id="services_section" class="py-4 background2">
+       <div class="container"> 
+
+        <h1 class="text-center  ">Services that we provide</h1>
+          
+        
+        <div class="row mt-5">
+          <!-- first services coloumn -->
+          <% for(var i=0; i<sendservice.length; i++) {%>
+          <div class="col-md-4 py-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="container text-center"><i class="<%=sendservice[i].icon%> "></i>
+                </div>
+                <h4 class="card-title"><%=sendservice[i].title%></h4>
+                <p><%=sendservice[i].description%></p>
+                <a href="<%=sendservice[i].linkText%>"><%=sendservice[i].link%></a>
+              </div>
+              
+            </div>
+          </div>
+          <%}%>
+        </div>      
+      </div>
+      </section>
+
+      <!-- %%%%%%%%%%%%%%%%%%%%%%%% banner 2 section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+      <section class="banner2_section py-3" >
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-6 text-center py-5">
+              <!-- leftside -->
+              <h3><%=banner.twohead%></h3>
+              <p><%=banner.twodes%></p>
+              <button class="navbar1"><a href="<%=banner.twolink%>"> Click here</a></button>
+            </div>
+            <div class="col-md-6 text-center">
+              <!-- right side -->
+              <img src="/static/images/vivid-transparent-orange-autumn-leaf.jpg" style="max-height: 250px;" alt="graphic1 cannot be loaded">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+      <!-- %%%%%%%%%%%%%%%%%%%%%%%% banner 3 section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+      <section class="banner2_section py-3">
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <!-- left side -->
+              <img src="/static/images/vivid-transparent-orange-autumn-leaf.jpg" style="max-height: 250px;" alt="graphic1 cannot be loaded">
+            </div>
+            <div class="col-md-6 text-center py-5">
+              <!-- rightside -->
+              <h3><%=banner.threehead%></h3>
+              <p><%=banner.threedes%></p>
+              <button class=" navbar1"><a href="<%=banner.threelink%>">Click here</a></button>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+
+
+           <!-- ------------------contact us section  --------------------------------------------->
+      
+           <section id="contact_us_section" class="py-5 background1">
+            <div class="container">
+            <div class="row">
+              <h3 class="text-center text-muted">Contact us</h3>
+              <div class="col-md-12">
+
+
+
+
+
+
+
+                <form action="/process-contact-form" method="post">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="contactNumberField" class="form-label">Your contact number</label>
+                    <input type="number" name="phone" class="form-control" id="contactNumberField">
+                  </div>
+
+                  <div class="form-floating my-2">
+                    <textarea class="form-control" name="query" placeholder="Enter your query" id="querySection"></textarea>
+                    <label for="querySection">Comments</label>
+                  </div>
+
+
+                 <div class="container text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                 </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+           </section>
+
+
+                             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%55 about us %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5 -->
+
+<section class="about_us py-4" id="about_us_section" >
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>About us</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam similique eum blanditiis aspernatur explicabo vel unde, quos magni aperiam minima nostrum vitae? Repellendus, tempora adipisci.</p>
+        <button class="btn btn-primary"> More</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<%-include('partials/footer.ejs')%>
+
+
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</html>
